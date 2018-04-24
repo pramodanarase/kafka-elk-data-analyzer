@@ -1,0 +1,11 @@
+---
+version: '2'
+services:
+  logstash:
+    image: docker.elastic.co/logstash/logstash:6.2.4
+    environment:
+    - XPACK_MONITORING_ENABLED=false
+    volumes:
+      - ./pipeline/:/usr/share/logstash/pipeline/
+    ports:
+      - 5044:5044
